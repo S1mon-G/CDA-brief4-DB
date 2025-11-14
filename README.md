@@ -31,7 +31,7 @@
 ![MPD](img/MPD.png)
 ## mise en place de la base
 -créer les tables issues du MPD
-⚠️ commencer par les tables indépendantes de toute relation pour éviter les erreurs
+### ⚠️ commencer par les tables indépendantes de toute relation pour éviter les erreurs
 **pour chaque table crées sur le MPD**
 ```sql
 CREATE TABLE nom_de_la_table(
@@ -61,3 +61,5 @@ SELECT * FROM adresses LIMIT 100
 
 - créer un **script SQL** pour les requêtes de consultation
 [script de consultation des données](./request_consult.sql)
+
+

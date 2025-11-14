@@ -62,4 +62,7 @@ SELECT * FROM adresses LIMIT 100
 - créer un **script SQL** pour les requêtes de consultation
 [script de consultation des données](./request_consult.sql)
 
+-créer un **script SQL** pour ajouter, mettre à jour ou modifier les données
+[script d'édition](./request_add_update_delete.sql)
+
 

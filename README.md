@@ -59,10 +59,12 @@ SELECT * FROM adresses LIMIT 100
 
 ### requêtes de consultation
 
-- [script de consultation des données](./request_consult.sql)
+- [script de consultation des données](./query_consult.sql)
 
 ### requêtes d’insertion / mise à jour / suppression
 
-- [script d'édition](./request_add_update_delete.sql)
+- [script d'édition](./query_add_update_delete.sql)
 
+### requêtes d’agrégation et analyse
 
+- [script d'analyse et d'agrégation](./query_analysis.sql)

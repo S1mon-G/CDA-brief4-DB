@@ -30,13 +30,34 @@
 - créer un **MPD** en indiquant chaque type de données
 ![MPD](img/MPD.png)
 ## mise en place de la base
+-créer les tables issues du MPD
+⚠️ commencer par les tables indépendantes de toute relation pour éviter les erreurs
+**pour chaque table crées sur le MPD**
+```sql
+CREATE TABLE nom_de_la_table(
+    colonne1 type de donnée contrainte, 
+    colonne2 type de donnée contrainte,
+    ...
+);
+````
+le cas échéant, ajouter un **constraint** pour les clés étrangères
 
+``constraint fk_nom_de_la_clé_étrangère 
+foreign key (nom_de_la_clé_étrangère) 
+references table_de_référence(identifiant)
+ ``
+ - Créer un jeu d’échantillon depuis le fichier d’adresse complet pour faire les tests de requêtes.
+
+ ``sql
+CREATE TABLE adress_sample as
+SELECT * FROM adresses LIMIT 100
+ ``
+
+- créer un **script SQL** pour insérer les données dans les tables crées depuis le jeu de données
+[script d'insertion de données](./data_insert_script.sql)
 ## requêtes SQL
 
 ### requêtes de consultation
 
-- lister toutes les adresses d'une commune donnée, triées par voie
-
-```sql 
-SELECT * FROM adress WHERE id_town = ? ORDER BY id_lane
-```
+- créer un **script SQL** pour les requêtes de consultation
+[script de consultation des données](./request_consult.sql)

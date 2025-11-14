@@ -65,3 +65,7 @@ values (
         '33666000FT0095',
         1
     );
+
+update lane l set name = 'iceberg lounge' where l.id = 42518;
+
+delete from adress where fantoir_id = '';

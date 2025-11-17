@@ -46,7 +46,7 @@ le cas échéant, ajouter un **constraint** pour les clés étrangères
 foreign key (nom_de_la_clé_étrangère) 
 references table_de_référence(identifiant)
  ``
- - [script de création des tables](./table_creation.sql)
+ - [script de création des tables](./queries/table_creation.sql)
 
  - Créer un jeu d’échantillon depuis le fichier d’adresse complet pour faire les tests de requêtes.
 
@@ -57,7 +57,7 @@ SELECT * FROM adresses LIMIT X
 
 - créer un **script SQL** pour insérer les données dans les tables crées depuis le jeu de données.
 
-- [script d'insertion de données](./data_insert_script.sql)
+- [script d'insertion de données](./queries/data_insert_script.sql)
 ## requêtes SQL
 
 ### requêtes de consultation
@@ -73,7 +73,7 @@ WHERE
 ```
 
 ***toutes les requêtes***
-- [script de consultation des données](./query_consult.sql)
+- [script de consultation des données](./queries/query_consult.sql)
 
 ### requêtes d’insertion / mise à jour / suppression
 ***exemple***
@@ -96,7 +96,7 @@ VALUES (
 
 ***toutes les requêtes***
 
-- [script d'édition](./query_add_update_delete.sql)
+- [script d'édition](./queries/query_add_update_delete.sql)
 
 ### requêtes de détection de problèmes et qualité des données
 
@@ -109,8 +109,8 @@ GROUP BY
 HAVING
     COUNT(*) > 10000;
 ```
-***toutes les requêtes
-- [script détection et qualité](./query_quality.sql)
+***toutes les requêtes***
+- [script détection et qualité](./queries/query_quality.sql)
 
 
 ### requêtes d’agrégation et analyse
@@ -125,4 +125,49 @@ ORDER BY nb_repetition DESC
 LIMIT 10;
 ```
 ***toutes les requêtes***
-- [script d'analyse et d'agrégation](./query_analysis.sql)
+- [script d'analyse et d'agrégation](./queries/query_analysis.sql)
+
+## NOTES DE BRIEF
+
+- ***Découverte de la donnée*** 
+réalisé en entier
+- ***Modélisation Merise***
+réalisé en entier
+- ***Mise en place de la base***
+réalisé en entier
+- ***Requêtes SQL à produire***
+réalisé jusqu'au 4.5 deuxième point où je me suis arrêté pour jouer un peu ave docker-compose
+- ***optimisation et analyse***
+non réalisé
+
+
+***docker compose***
+## Création du fichier docker-compose
+
+***Récupération de l'image officielle postgreSQL***
+
+- sur https://hub.docker.com/_/postgres section ***how to use this image***
+
+- création du fichier [docker-compose.yml](./docker-compose.yml)
+```
+services :
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_PASSWORD : bddBrief
+    ports:
+    - "5433:5432"
+    volumes: 
+    - db_data:/var/lib/postgresql
+
+volumes:
+  db_data:
+```
+***⚠️ ici, le port 5432 de base était déjà utilisé, port local changé en 5433 afin de pouvoir démarrer le container***
+
+-  transfert de la table d'échantillon créée de la première base pour l'utiliser dans la nouvelle créée via docker-compose.
+
+- test des scripts sql 
+
+- adaptation du dernier script d'import de données pour réduire le batch suite à une erreur 
+```SQL Error [57P03]: FATAL: the database system is in recovery mode```

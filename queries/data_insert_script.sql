@@ -50,8 +50,7 @@ SELECT
             AND onm.old_town_name = a.nom_ancienne_commune
         LIMIT 1
     ) AS id_old_nomenclature
-FROM
-    adress_sample a ON CONFLICT (insee_code) DO NOTHING;
+FROM adress_sample a;
 
 insert into
     adress (

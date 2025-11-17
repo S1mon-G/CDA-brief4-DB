@@ -167,7 +167,7 @@ volumes:
 
 -  transfert de la table d'échantillon créée de la première base pour l'utiliser dans la nouvelle créée via docker-compose.
 
-- test des scripts sql 
+- test des scripts SQL pour la création de table et import de données.
 
 - adaptation du dernier script d'import de données pour réduire le batch suite à une erreur 
 ```SQL Error [57P03]: FATAL: the database system is in recovery mode```

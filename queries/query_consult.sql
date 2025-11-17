@@ -11,7 +11,7 @@ SELECT a.*, l.name
 FROM adress a
     join lane l on a.id_lane = l.id
 WHERE
-    name ILIKE '%rue%';
+    l.name ILIKE '%rue%';
 
 SELECT a.*, t.postcode, t.name
 FROM adress a

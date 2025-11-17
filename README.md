@@ -60,14 +60,14 @@ SELECT * FROM adresses LIMIT 100
 ### requêtes de consultation
 ***exemple***
 
-``sql
+```sql
 SELECT a.*, t.postcode, t.name
 FROM adress a
     JOIN town t ON a.id_town = t.id
 WHERE
     t.postcode IS NULL
     AND t.name IS NOT NULL;
-``
+```
 
 ***toutes les requêtes***
 - [script de consultation des données](./query_consult.sql)
@@ -75,7 +75,7 @@ WHERE
 ### requêtes d’insertion / mise à jour / suppression
 ***exemple***
 
-``sql
+```sql
 INSERT INTO
     town (
         name,
@@ -89,7 +89,7 @@ VALUES (
         '66633',
         'GOTHAM CITY'
     );
- ``   
+ ```   
 
 ***toutes les requêtes***
 

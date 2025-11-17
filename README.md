@@ -46,11 +46,13 @@ le cas échéant, ajouter un **constraint** pour les clés étrangères
 foreign key (nom_de_la_clé_étrangère) 
 references table_de_référence(identifiant)
  ``
+ -[script de création des tables](./table_creation.sql)
+
  - Créer un jeu d’échantillon depuis le fichier d’adresse complet pour faire les tests de requêtes.
 
  ``sql
 CREATE TABLE adress_sample as
-SELECT * FROM adresses LIMIT 100
+SELECT * FROM adresses LIMIT X
  ``
 
 - créer un **script SQL** pour insérer les données dans les tables crées depuis le jeu de données

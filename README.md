@@ -58,13 +58,45 @@ SELECT * FROM adresses LIMIT 100
 ## requêtes SQL
 
 ### requêtes de consultation
+***exemple***
 
+``sql
+SELECT a.*, t.postcode, t.name
+FROM adress a
+    JOIN town t ON a.id_town = t.id
+WHERE
+    t.postcode IS NULL
+    AND t.name IS NOT NULL;
+``
+
+***toutes les requêtes***
 - [script de consultation des données](./query_consult.sql)
 
 ### requêtes d’insertion / mise à jour / suppression
+***exemple***
+
+``sql
+INSERT INTO
+    town (
+        name,
+        postcode,
+        insee_code,
+        forwarding
+    )
+VALUES (
+        'Gotham City',
+        '33666',
+        '66633',
+        'GOTHAM CITY'
+    );
+ ``   
+
+***toutes les requêtes***
 
 - [script d'édition](./query_add_update_delete.sql)
 
 ### requêtes d’agrégation et analyse
+***exemple***
 
+***toutes les requêtes***
 - [script d'analyse et d'agrégation](./query_analysis.sql)

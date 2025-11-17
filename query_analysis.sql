@@ -23,3 +23,13 @@ GROUP BY
     id_town
 ORDER BY nb_repetition DESC
 LIMIT 10;
+
+SELECT a.*, t.name AS town_name, t.postcode, l.name AS lane_name
+FROM adress a
+    JOIN town t ON t.id = a.id_town
+    JOIN lane l on l.id = a.id_lane
+WHERE
+    a.number IS NULL
+    OR t.name IS NULL
+    OR t.postcode IS NULL
+    OR l.name IS NULL;

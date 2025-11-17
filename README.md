@@ -95,8 +95,31 @@ VALUES (
 
 - [script d'édition](./query_add_update_delete.sql)
 
-### requêtes d’agrégation et analyse
-***exemple***
+### requêtes de détection de problèmes et qualité des données
 
+***exemple***
+```sql
+SELECT id_town, COUNT(*) AS nb_repetition
+FROM adress a
+GROUP BY
+    id_town
+HAVING
+    COUNT(*) > 10000;
+```
+***toutes les requêtes
+- [script détection et qualité](./query_quality.sql)
+
+
+### requêtes d’agrégation et analyse
+
+***exemple***
+```sql
+SELECT id_town, COUNT(*) AS nb_repetition
+FROM adress a
+GROUP BY
+    id_town
+ORDER BY nb_repetition DESC
+LIMIT 10;
+```
 ***toutes les requêtes***
 - [script d'analyse et d'agrégation](./query_analysis.sql)

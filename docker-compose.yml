@@ -1,0 +1,7 @@
+services :
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_PASSWORD : bddBrief
+    ports:
+    - "5433:5432"
